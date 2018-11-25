@@ -10,9 +10,9 @@ string Park::getAddress() const
 	return address_;
 }
 
-void Park::setLengthCycleTracks(float lenght)
+void Park::setLengthCycleTracks(float lengthCycleTracks)
 {
-	lengthCycleTracks_ = lenght;
+	lengthCycleTracks_ = lengthCycleTracks;
 }
 
 float Park::getLengthCycleTracks() const
@@ -20,14 +20,14 @@ float Park::getLengthCycleTracks() const
 	return lengthCycleTracks_;
 }
 
-void Park::setPriceTicket(float price)
+void Park::setPriceTicket(float priceTicket)
 {
-	priceTikcet_ = price;
+	priceOfEntranceTicket_ = priceTicket;
 }
 
 float Park::getPriceTicket() const
 {
-	return priceTikcet_;
+	return priceOfEntranceTicket_;
 }
 
 void Park::setType(string type)
@@ -40,9 +40,9 @@ string Park::getType() const
 	return type;
 }
 
-void Park::setYearFoundation(uint year)
+void Park::setYearFoundation(uint yearFoundation)
 {
-	yearFoundation = year;
+	yearFoundation = yearFoundation;
 }
 
 uint Park::getYearFoundation() const
@@ -50,38 +50,38 @@ uint Park::getYearFoundation() const
 	return yearFoundation;
 }
 
-void Park:: show(Park park)
+void Park:: outputOnDisplayInformation()
 {
-	cout << "Address : " << park.getAddress() << endl;
-	cout << "LengthCycleTracks : " << park.getLengthCycleTracks() << " m" << endl;
-	cout << "PriceTicket : " << park.getPriceTicket() << " UAH" << endl;
-	cout << "Year fundation : " << park.getYearFoundation() << endl;
-	cout << "Type : " << park.getType() << endl;
-	cout << "Name : " << park.name << endl;
-	cout << "Area : " << park.area << " Ha" << endl;
+	cout << "Address : " << getAddress() << endl;
+	cout << "LengthCycleTracks : " << getLengthCycleTracks() << " m" << endl;
+	cout << "PriceTicket : " << getPriceTicket() << " UAH" << endl;
+	cout << "Year fundation : " << getYearFoundation() << endl;
+	cout << "Type : " << getType() << endl;
+	cout << "Name : " << name << endl;
+	cout << "Area : " << area << " Ha" << endl;
 }
 
 Park::Park()
 {
 	address_  = "No address";
 	lengthCycleTracks_ = 0.0;
-	priceTikcet_ = 0.0;
+	priceOfEntranceTicket_ = 0.0;
 	name = "No name";
 	area = 0.0;
 	type = "No type";
 	yearFoundation = 1900;
 }
 
-Park::Park(string adress, uint lenghtCycleTracks, float price, string type, uint yearFoundation)
+Park::Park(string adress, float lenghtCycleTracks, float priceOfEntranceTicket, string type, uint yearFoundation)
 {
 	address_ = adress;
 	lengthCycleTracks_ = lenghtCycleTracks;
-	priceTikcet_ = price;
+	priceOfEntranceTicket_ = priceOfEntranceTicket;
 	this->type = type;
 	this->yearFoundation = yearFoundation;
 }
 
 Park::~Park()
 {
-	cout << "DESTRUCTOR\n";
+	cout << "Destructor\n";
 }
