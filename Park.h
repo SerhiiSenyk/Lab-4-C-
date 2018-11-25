@@ -24,26 +24,26 @@ class Park
 private:
 	string address_;
 	float lengthCycleTracks_;
-	float priceTikcet_;
+	float priceOfEntranceTicket_;
 protected:
 	string type;
 	uint yearFoundation;
 public:
 	void setAddress(string address);
 	string getAddress() const;
-	void setLengthCycleTracks(float lenght);
+	void setLengthCycleTracks(float lengthCycleTracks);
 	float getLengthCycleTracks() const;
-	void setPriceTicket(float price);
+	void setPriceTicket(float priceTicket);
 	float getPriceTicket() const;
 	void setType(string type);
 	string getType() const;
-	void setYearFoundation(uint year);
+	void setYearFoundation(uint yearFoundation);
 	uint getYearFoundation() const;
-    void show(Park park);
+    void outputOnDisplayInformation();
 	string name;
 	float area;
 	Park();
-	Park(string address,uint lenghtCycleTracks,float price,
+	Park(string address,float lenghtCycleTracks,float priceOfEntranceTicket,
 		string type,uint yearFundation);
 	~Park();
 };
