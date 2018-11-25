@@ -15,43 +15,43 @@
 //- ціна вхідного квитка
 
 #include"Park.h"
+
 using namespace std;
 int main()
 {
-	Park parkA;
-	Park parkB;
-	Park parkC("Lviv, V. Velykoho street", 1200.8, 50, "land", 1970);
-	parkC.area = 40.2;
-	parkC.name = "Horihovii hai";
-	//ініціалізація
-	parkB.setAddress("Lviv,Stusa street");
-	parkB.setLengthCycleTracks(234.8);
-	parkB.setPriceTicket(43.4);
-	parkB.setYearFoundation(1984);
-	parkB.setType("Recreation");
-	parkB.name = "Zalizna voda";
-	parkB.area = 19.5;
-	cout << "\t\tPark1 :\n";
-	parkA.show(parkA);
-
-	cout << "\t\tPark2 : \n";
-	cout << "Address : " << parkB.getAddress() << endl;
-	cout << "LengthCycleTracks : " << parkB.getLengthCycleTracks() << " m" << endl;
-	cout << "PriceTicket : " << parkB.getPriceTicket() << " UAH" << endl;
-	cout << "Year fundation : " << parkB.getYearFoundation() << endl;
-	cout << "Type : " << parkB.getType() << endl;
-	cout << "Name : " << parkB.name << endl;
-	cout << "Area : " << parkB.area << " Ha" << endl;
-	parkA.~Park();
-
-	cout << "\t\tPark3 : \n";
-	cout << "Address : " << parkC.getAddress() << endl;
-	cout << "LengthCycleTracks : " << parkC.getLengthCycleTracks() << " m" << endl;
-	cout << "PriceTicket : " << parkC.getPriceTicket() << " UAH" << endl;
-	cout << "Year fundation : " << parkC.getYearFoundation() << endl;
-	cout << "Type : " << parkC.getType() << endl;
-	cout << "Name : " << parkC.name << endl;
-	cout << "Area : " << parkC.area << " Ha" << endl;
+	const uint yearFoundationPark = 1970;
+	const float lenghtCycleTracks = 1200.8;
+	const float areaOfPark = 40.2;
+	const string adressOfPark = "Lviv, V. Velykoho street";
+	const string typeOfPark = "land";
+	const float priceOfEntranceTicket = 50;
+	Park firstPark;
+	Park secondPark;
+	Park thirdPark(adressOfPark,lenghtCycleTracks, priceOfEntranceTicket, typeOfPark, yearFoundationPark);
+	thirdPark.area = areaOfPark;
+	thirdPark.name = "Horihovii hai";
+	secondPark.setAddress("Lviv,Stusa street");
+	secondPark.setLengthCycleTracks(234.8);
+	secondPark.setPriceTicket(43.4);
+	secondPark.setYearFoundation(1984);
+	secondPark.setType("Recreation");
+	secondPark.name = "Zalizna voda";
+	secondPark.area = 19.5;
+	cout << "\t\tFirst park :\n";
+	firstPark.outputOnDisplayInformation();
+	cout << "\t\tSecond park : \n";
+	secondPark.outputOnDisplayInformation();
+	cout << "\t\tThird Park : \n";
+	cout << "Address : " << thirdPark.getAddress() << endl;
+	cout << "LengthCycleTracks : " << thirdPark.getLengthCycleTracks() << " m" << endl;
+	cout << "PriceTicket : " << thirdPark.getPriceTicket() << " UAH" << endl;
+	cout << "Year fundation : " << thirdPark.getYearFoundation() << endl;
+	cout << "Type : " << thirdPark.getType() << endl;
+	cout << "Name : " << thirdPark.name << endl;
+	cout << "Area : " << thirdPark.area << " Ha" << endl;
+	thirdPark.~Park();
+	secondPark.~Park();
+	firstPark.~Park();
 	system("pause");
 	return 0;
 }
